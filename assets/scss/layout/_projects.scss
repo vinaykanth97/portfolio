@@ -1,0 +1,36 @@
+.project {
+    display: flex;
+    gap: em(60);
+    align-items: center;
+    margin: 0 0 em(60) 0;
+
+    &:last-of-type {
+        margin: 0;
+    }
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    &-img {
+        flex: 1;
+
+        img {
+            width: 100%;
+            border-radius: em(18);
+        }
+    }
+
+    &-content {
+        flex: 1;
+
+        h2,
+        h3 {
+            margin: 0 0 em(6);
+        }
+
+        p {
+            margin: 0 0 em(30);
+        }
+    }
+}

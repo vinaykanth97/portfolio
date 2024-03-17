@@ -1,0 +1,15 @@
+footer {
+    padding: em(20) 0;
+    .footwrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        svg {
+            max-width: em(40);
+
+            polygon {
+                fill: #fff;
+            }
+        }
+    }
+}

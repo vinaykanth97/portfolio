@@ -1,0 +1,51 @@
+.banner-wrap {
+    display: flex;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        max-width: 45%;
+
+        h1 {
+            margin: 0 0 20px 0;
+        }
+    }
+
+    .social-links {
+        display: flex;
+
+        a {
+            padding: 20px;
+            display: inline-block;
+            border: 2px solid $basePrimary;
+            border-radius: 8px;
+            transition: 0.3s all ease-in-out;
+
+            &:hover {
+                background: $basePrimary;
+
+                svg {
+                    path {
+                        fill: $baseSecondary;
+                    }
+
+                }
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+
+                path {
+                    transition: 0.3s all ease-in-out;
+                }
+            }
+        }
+    }
+    figure{
+        max-width: 55%;
+        position: relative;
+    }
+}

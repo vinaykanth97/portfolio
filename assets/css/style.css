@@ -1,0 +1,480 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1em;
+  line-height: 1.25em;
+  font-weight: 300;
+  font-style: normal;
+}
+
+span.outlined {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+h1 {
+  font-size: 2.25em;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.75em;
+  line-height: 2em;
+}
+
+h4 {
+  font-size: 1.5em;
+  line-height: 1.75em;
+}
+
+h5 {
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+h6 {
+  font-size: 1em;
+  line-height: 1.25em;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #71717A;
+}
+
+p.small {
+  font-size: 0.75em;
+  line-height: 1em;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.container {
+  max-width: 76.125em;
+  width: 100%;
+  margin: auto;
+  padding: 0 0.9375em;
+}
+
+.section-space {
+  padding: 3.125em 0;
+}
+
+.bottom-space {
+  padding: 0 0 3.125em 0;
+}
+
+.top-space {
+  padding: 3.125em 0 0 0;
+}
+
+.centered-title {
+  text-align: center;
+  margin: 0 0 1.875em;
+}
+
+.bg-primary {
+  background: black;
+  color: #fff;
+}
+.bg-primary p {
+  color: #fff;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.swiper-container {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  padding: 1.25em 0;
+}
+header .header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-wrap figure {
+  flex-basis: 2.5em;
+}
+header .header-wrap nav ul {
+  display: flex;
+  gap: 1.25em;
+}
+header .header-wrap nav ul li {
+  cursor: pointer;
+  font-weight: 400;
+}
+header .header-wrap .primary-btn {
+  background: black;
+  color: #fff;
+  padding: 0.625em 0.9375em;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.625em;
+}
+
+.banner-wrap {
+  display: flex;
+}
+.banner-wrap .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 45%;
+}
+.banner-wrap .content h1 {
+  margin: 0 0 20px 0;
+}
+.banner-wrap .social-links {
+  display: flex;
+}
+.banner-wrap .social-links a {
+  padding: 20px;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 8px;
+  transition: 0.3s all ease-in-out;
+}
+.banner-wrap .social-links a:hover {
+  background: black;
+}
+.banner-wrap .social-links a:hover svg path {
+  fill: #fff;
+}
+.banner-wrap .social-links a svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.banner-wrap .social-links a svg path {
+  transition: 0.3s all ease-in-out;
+}
+.banner-wrap figure {
+  max-width: 55%;
+  position: relative;
+}
+
+.skill-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11.25em, 1fr));
+  gap: 2.5em;
+}
+.skill-wrap li {
+  padding: 1.25em 1.25em;
+  text-align: center;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  max-height: 11.625em;
+}
+.skill-wrap li:hover {
+  background-color: black;
+  color: #fff;
+}
+.skill-wrap li:hover path {
+  fill: #fff;
+}
+.skill-wrap li svg {
+  margin: 0 0 1.875em;
+  flex-grow: 2;
+  align-self: center;
+}
+.skill-wrap li p {
+  font-weight: bold;
+}
+
+.experience {
+  padding: 1.25em;
+  border: 1px solid #D4D4D8;
+  border-radius: 0.625em;
+  transition: 0.3s all ease-in-out;
+  margin: 0 0 1.5em;
+}
+.experience:last-of-type {
+  margin: 0;
+}
+.experience:hover {
+  background-color: #27272A;
+}
+.experience-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 1.25em;
+}
+.experience-title img {
+  max-width: 1.75em;
+}
+.experience-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.25em;
+}
+
+.about-wrap {
+  display: flex;
+  gap: 1.875em;
+}
+.about-wrap figure {
+  flex-basis: 40%;
+}
+.about-wrap figure img {
+  width: 100%;
+}
+.about-wrap .content {
+  flex-basis: 60%;
+}
+.about-wrap .content h2 {
+  margin: 0 0 0.875em;
+}
+.about-wrap .content p {
+  margin: 0 0 1.25em;
+}
+
+.project {
+  display: flex;
+  gap: 3.75em;
+  align-items: center;
+  margin: 0 0 3.75em 0;
+}
+.project:last-of-type {
+  margin: 0;
+}
+.project:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.project-img {
+  flex: 1;
+}
+.project-img img {
+  width: 100%;
+  border-radius: 1.125em;
+}
+.project-content {
+  flex: 1;
+}
+.project-content h2,
+.project-content h3 {
+  margin: 0 0 0.375em;
+}
+.project-content p {
+  margin: 0 0 1.875em;
+}
+
+.review .swiper-slide {
+  margin: 0.625em 0;
+  text-align: center;
+  padding: 2.5em 1.25em;
+  box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 0.322);
+  border-radius: 20px;
+  transition: 0.3s all ease-in-out;
+}
+.review .swiper-slide figure {
+  margin: 0 0 1em;
+  position: relative;
+  display: inline-block;
+}
+.review .swiper-slide figure::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1.875em;
+  height: 1.875em;
+  background-color: black;
+  background: url("/assets/images/quote-white.svg") no-repeat center black;
+  background-size: 50%;
+  border-radius: 50%;
+}
+.review .swiper-slide p {
+  padding: 0 0 1.25em;
+  position: relative;
+  margin: 0 0 1.25em;
+  color: black;
+}
+.review .swiper-slide p:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+}
+.review .swiper-slide h5 {
+  margin: 0 0 1.25em;
+  font-weight: 500;
+}
+.review .swiper-slide h6 {
+  color: #71717A;
+  font-weight: 500;
+}
+.review .swiper-slide-active {
+  background-color: black;
+  color: #fff;
+}
+.review .swiper-slide-active p {
+  color: #fff;
+}
+.review .swiper-slide-active figure::after {
+  background-color: #fff;
+  background-image: url("/assets/images/quote-black.svg");
+}
+.review .swiper-slide-active p::after {
+  background-color: #fff;
+}
+.review .swiper-slide-active h6 {
+  color: #fff;
+}
+
+.getin-touch h2 {
+  margin: 0 0 0.625em;
+}
+.getin-touch p {
+  margin: 0 0 1.375em;
+}
+.getin-touch h3 {
+  font-weight: 500;
+}
+
+footer {
+  padding: 1.25em 0;
+}
+footer .footwrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footwrap svg {
+  max-width: 2.5em;
+}
+footer .footwrap svg polygon {
+  fill: #fff;
+}/*# sourceMappingURL=style.css.map */

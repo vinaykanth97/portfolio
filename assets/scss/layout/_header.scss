@@ -1,0 +1,30 @@
+header {
+    padding: em(20) 0;
+    .header-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        figure{
+            flex-basis: em(40);
+        }
+        nav {
+            ul {
+                display: flex;
+                gap: em(20);
+                li{
+                    cursor: pointer;
+                    font-weight: 400;
+                }
+            }
+        }
+        .primary-btn{
+            background: $basePrimary;
+            color: $baseSecondary;
+            padding: em(10) em(15);
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: em(10);
+        }
+    }
+}

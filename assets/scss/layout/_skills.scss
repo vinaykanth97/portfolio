@@ -1,0 +1,32 @@
+.skill-wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(em(180), 1fr));
+    gap: em(40);
+
+    li {
+        padding: em(20) em(20);
+        text-align: center;
+        border: 1px solid $basePrimary;
+        display: flex;
+        flex-direction: column;
+        max-height: em(186);
+
+        &:hover {
+            background-color: $basePrimary;
+            color: $baseSecondary;
+
+            path {
+                fill: $baseSecondary;
+            }
+        }
+
+        svg {
+            margin: 0 0 em(30);
+            flex-grow: 2;
+            align-self: center;
+        }
+        p{
+            font-weight: bold;
+        }
+    }
+}

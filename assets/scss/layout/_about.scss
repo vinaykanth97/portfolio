@@ -1,0 +1,21 @@
+.about-wrap {
+    display: flex;
+    gap: em(30);
+
+    figure {
+       flex-basis: 40%;
+        img {
+            width: 100%;
+        }
+    }
+
+    .content {
+        flex-basis: 60%;
+        h2{
+            margin: 0 0 em(14);
+        }
+        p {
+            margin: 0 0 em(20);
+        }
+    }
+}

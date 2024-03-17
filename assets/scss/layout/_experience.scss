@@ -1,0 +1,28 @@
+.experience {
+    padding: em(20);
+    border: 1px solid #D4D4D8;
+    border-radius: em(10);
+    transition: 0.3s all ease-in-out;
+    margin: 0 0 em(24);
+    &:last-of-type{
+        margin: 0;
+    }
+    &:hover{
+        background-color: #27272A;
+    }
+    &-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 em(20);
+        img{
+            max-width: em(28);
+        }
+    }
+
+    &-wrap {
+        display: flex;
+        align-items: center;
+        gap: em(20);
+    }
+}
