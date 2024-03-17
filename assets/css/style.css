@@ -408,7 +408,7 @@ header .header-wrap .primary-btn {
   width: 1.875em;
   height: 1.875em;
   background-color: black;
-  background: url("./../../images/quote-white.svg") no-repeat center black;
+  background: url("../images/quote-white.svg") no-repeat center black;
   background-size: 50%;
   border-radius: 50%;
 }
@@ -445,7 +445,7 @@ header .header-wrap .primary-btn {
 }
 .review .swiper-slide-active figure::after {
   background-color: #fff;
-  background-image: url("./../../images/quote-black.svg");
+  background-image: url("../images/quote-black.svg");
 }
 .review .swiper-slide-active p::after {
   background-color: #fff;
