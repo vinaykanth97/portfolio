@@ -19,7 +19,7 @@
                 width: em(30);
                 height: em(30);
                 background-color: $basePrimary;
-                background: url('~/assets/images/quote-white.svg') no-repeat center $basePrimary;
+                background: url('./../../images/quote-white.svg') no-repeat center $basePrimary;
                 background-size: 50%;
                 border-radius: 50%;
             }
@@ -61,7 +61,7 @@
             figure {
                 &::after {
                     background-color: #fff;
-                    background-image: url('~/assets/images/quote-black.svg');
+                    background-image: url('./../../images/quote-black.svg');
                 }
             }
             p {
