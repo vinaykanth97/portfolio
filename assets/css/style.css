@@ -212,6 +212,10 @@ a {
 
 header {
   padding: 1.25em 0;
+  position: sticky;
+  top: 0;
+  z-index: 22;
+  background-color: #fff;
 }
 header .header-wrap {
   display: flex;
@@ -237,6 +241,10 @@ header .header-wrap .primary-btn {
   display: flex;
   align-items: center;
   gap: 0.625em;
+  cursor: pointer;
+}
+header .header-wrap .primary-btn:hover {
+  background: #0e0d0d;
 }
 
 .banner-wrap {

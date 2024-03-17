@@ -6,6 +6,7 @@
         box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 0.322);
         border-radius: 20px;
         transition: 0.3s all ease-in-out;
+
         figure {
             margin: 0 0 em(16);
             position: relative;
@@ -30,6 +31,7 @@
             position: relative;
             margin: 0 0 em(20);
             color: $basePrimary;
+
             &:after {
                 content: "";
                 position: absolute;
@@ -55,21 +57,25 @@
         &-active {
             background-color: $basePrimary;
             color: #fff;
-            p{
+
+            p {
                 color: #fff;
             }
+
             figure {
                 &::after {
                     background-color: #fff;
                     background-image: url('../images/quote-black.svg');
                 }
             }
+
             p {
                 &::after {
                     background-color: #fff;
                 }
             }
-            h6{
+
+            h6 {
                 color: #fff;
             }
         }

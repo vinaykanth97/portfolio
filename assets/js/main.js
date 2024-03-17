@@ -3,6 +3,9 @@ let reviewSwiper = new Swiper(".swiper-container", {
     slidesPerView: 3,
     centeredSlides: true,
     loop: true,
-    autoplay:true,
+    autoplay: true,
     roundLengths: true,
 });
+
+
+// Header on scroll

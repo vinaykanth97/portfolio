@@ -1,23 +1,31 @@
 header {
     padding: em(20) 0;
+    position: sticky;
+    top: 0;
+    z-index: 22;
+    background-color: #fff;
     .header-wrap {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        figure{
+
+        figure {
             flex-basis: em(40);
         }
+
         nav {
             ul {
                 display: flex;
                 gap: em(20);
-                li{
+
+                li {
                     cursor: pointer;
                     font-weight: 400;
                 }
             }
         }
-        .primary-btn{
+
+        .primary-btn {
             background: $basePrimary;
             color: $baseSecondary;
             padding: em(10) em(15);
@@ -25,6 +33,11 @@ header {
             display: flex;
             align-items: center;
             gap: em(10);
+            cursor: pointer;
+
+            &:hover {
+                background: rgba($color: #0e0d0d, $alpha: 1.0);
+            }
         }
     }
 }
