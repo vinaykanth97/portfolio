@@ -5,10 +5,8 @@ body {
     line-height: em(20);
     font-weight: 300;
     font-style: normal;
-    
+
 }
-
-
 
 span {
     &.outlined {
@@ -92,17 +90,21 @@ img {
 .bg-primary {
     background: $basePrimary;
     color: $baseSecondary;
-    p{
+
+    p {
         color: $baseSecondary;
     }
 }
-.d-flex{
+
+.d-flex {
     display: flex;
 }
-.swiper-container{
+
+.swiper-container {
     overflow: hidden;
 }
-a{
+
+a {
     text-decoration: none;
     color: $basePrimary;
 }
