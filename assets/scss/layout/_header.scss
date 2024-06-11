@@ -4,6 +4,9 @@ header {
     top: 0;
     z-index: 22;
     background-color: #fff;
+    &.active{
+        box-shadow: 10px 6px 8px -8px rgba($color: #000000, $alpha: 0.3);
+    }
     .header-wrap {
         display: flex;
         align-items: center;
@@ -21,6 +24,9 @@ header {
                 li {
                     cursor: pointer;
                     font-weight: 400;
+                    &.active{
+                        text-decoration: underline;
+                    }
                 }
             }
         }

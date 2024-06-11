@@ -217,6 +217,9 @@ header {
   z-index: 22;
   background-color: #fff;
 }
+header.active {
+  box-shadow: 10px 6px 8px -8px rgba(0, 0, 0, 0.3);
+}
 header .header-wrap {
   display: flex;
   align-items: center;
@@ -233,6 +236,9 @@ header .header-wrap nav ul li {
   cursor: pointer;
   font-weight: 400;
 }
+header .header-wrap nav ul li.active {
+  text-decoration: underline;
+}
 header .header-wrap .primary-btn {
   background: black;
   color: #fff;
@@ -247,45 +253,62 @@ header .header-wrap .primary-btn:hover {
   background: #0e0d0d;
 }
 
-.banner-wrap {
+.banner .banner-wrap {
   display: flex;
 }
-.banner-wrap .content {
+.banner .banner-wrap .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   max-width: 45%;
+  height: calc(100vh - 166px);
 }
-.banner-wrap .content h1 {
+.banner .banner-wrap .content h1 {
   margin: 0 0 20px 0;
 }
-.banner-wrap .social-links {
+.banner .banner-wrap .content .banner-heading-anim {
+  position: relative;
+  overflow: hidden;
+}
+.banner .banner-wrap .content .banner-heading-anim .anim-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+}
+.banner .banner-wrap .social-links {
   display: flex;
 }
-.banner-wrap .social-links a {
+.banner .banner-wrap .social-links a {
   padding: 20px;
   display: inline-block;
   border: 2px solid black;
   border-radius: 8px;
   transition: 0.3s all ease-in-out;
 }
-.banner-wrap .social-links a:hover {
+.banner .banner-wrap .social-links a:hover {
   background: black;
 }
-.banner-wrap .social-links a:hover svg path {
+.banner .banner-wrap .social-links a:hover svg path {
   fill: #fff;
 }
-.banner-wrap .social-links a svg {
+.banner .banner-wrap .social-links a svg {
   width: 20px;
   height: 20px;
   vertical-align: middle;
 }
-.banner-wrap .social-links a svg path {
+.banner .banner-wrap .social-links a svg path {
   transition: 0.3s all ease-in-out;
 }
-.banner-wrap figure {
+.banner .banner-wrap figure {
   max-width: 55%;
+  width: 100%;
   position: relative;
+  opacity: 0;
+}
+.banner .banner-wrap figure img {
+  height: calc(100vh - 80px);
 }
 
 .skill-wrap {
@@ -338,6 +361,8 @@ header .header-wrap .primary-btn:hover {
 }
 .experience-title img {
   max-width: 1.75em;
+  width: 100%;
+  background: #fff;
 }
 .experience-wrap {
   display: flex;
@@ -386,6 +411,16 @@ header .header-wrap .primary-btn:hover {
 }
 .project-content {
   flex: 1;
+}
+.project-content svg {
+  max-width: 1.5em;
+  width: 100%;
+}
+.project-content svg g {
+  transition: 0.3s all ease-in-out;
+}
+.project-content svg:hover g {
+  transform: translate(2px, -2px);
 }
 .project-content h2,
 .project-content h3 {

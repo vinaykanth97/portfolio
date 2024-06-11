@@ -24,6 +24,21 @@
     &-content {
         flex: 1;
 
+        svg {
+            max-width: em(24);
+            width: 100%;
+            g {
+                transition: 0.3s all ease-in-out;
+            }
+
+            &:hover {
+                g {
+                    transform: translate(2px, -2px);
+                }
+            }
+
+        }
+
         h2,
         h3 {
             margin: 0 0 em(6);

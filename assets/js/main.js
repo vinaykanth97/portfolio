@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollToPlugin)
+gsap.registerPlugin(ScrollTrigger)
 let reviewSwiper = new Swiper(".swiper-container", {
     spaceBetween: 30,
     slidesPerView: 3,
@@ -28,3 +29,175 @@ const HeaderScroll = (e) => {
     });
 }
 headerMenu.forEach(menu => menu.addEventListener('click', HeaderScroll))
+
+
+// On Scroll Header
+let option = {
+    root: null,
+    rootMargin: "0px 0px -40% 0px",
+    threshold: 0.25,
+}
+let headerElement = document.querySelector('header')
+const section = document.querySelectorAll('section.spc')
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+        let currentSectionId = entry?.target?.id
+        if (entry.isIntersecting) {
+            RemoveActiveMenu()
+            document.querySelector(`header ul li[data-id=${currentSectionId}]`)?.classList?.add('active')
+        } else {
+            RemoveActiveMenu()
+        }
+    })
+}, option)
+
+
+section.forEach(sec => {
+    observer.observe(sec)
+})
+
+function RemoveActiveMenu() {
+    document.querySelectorAll(`header ul li`).forEach(ul => {
+        ul.classList.remove('active')
+    })
+}
+
+const headerOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            headerElement.classList.remove('active')
+        } else {
+            headerElement.classList.add('active')
+        }
+    })
+
+}, {
+    threshold: 0.97,
+})
+headerOnScroll.observe(document.querySelector('section'))
+
+
+// Typewriter effect
+let bannerHeading = document.querySelector('.main-content .role');
+
+let typewriter = new Typewriter(bannerHeading, {
+    loop: true
+});
+
+
+
+let gsapTimeLine = gsap.timeline({})
+
+
+// Banner Timeline
+gsapTimeLine.to('.anim-block', {
+    y: -300,
+    stagger: 1.3,
+    duration: 2,
+    onComplete: () => {
+        typewriter
+            .typeString('<span class="outlined">Frontend</span>')
+            .pauseFor(1000)
+            .deleteAll()
+            .typeString('<b>Frontend</span>')
+            .pauseFor(2500)
+            .start();
+    }
+})
+gsapTimeLine.to('.banner figure', {
+    duration: 1,
+    opacity: 1,
+})
+
+
+let defaultScrollTrigger = {
+    start: `top 30%`,
+    end: "bottom 80%",
+    // once: true,
+    markers: true
+}
+
+let entryTitleAnimation = {
+    start: {
+        y: 100,
+        opacity: 0,
+    },
+    end: {
+        y: 0,
+        opacity: 1,
+        stagger: 0.5
+    }
+}
+
+const titleTimeline = (timeline, selector) => {
+    timeline.fromTo(selector, {
+        ...entryTitleAnimation.start
+    }, {
+        ...entryTitleAnimation.end
+    })
+}
+
+// skillTimeLine
+let skillTimeLine = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#skills',
+        ...defaultScrollTrigger
+    }
+})
+
+titleTimeline(skillTimeLine, '#skills h2')
+skillTimeLine.fromTo('#skills .skill-wrap li', 1, {
+    opacity: 0,
+    rotateX: 0,
+    scaleY: -1
+}, {
+    opacity: 1,
+    stagger: 0.5,
+    rotateX: 180,
+    scaleY: -1,
+});
+
+// Experience Timeline
+let experienceTimeLine = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#experience',
+        ...defaultScrollTrigger
+    }
+})
+titleTimeline(experienceTimeLine, '#experience h2')
+experienceTimeLine.fromTo('#experience .experience', 1, {
+    opacity: 0,
+    x: "-20%",
+}, {
+    opacity: 1,
+    x: 0,
+    stagger: 0.5,
+})
+
+
+// About us Timeline
+let squarePath = document.querySelector('.square-cls').getTotalLength()
+let aboutMeTimeLine = gsap.timeline({
+
+    scrollTrigger: {
+        trigger: '#about',
+        ...defaultScrollTrigger
+    }
+})
+titleTimeline(aboutMeTimeLine, '#about h2')
+titleTimeline(aboutMeTimeLine, '#about p')
+
+// 2081.197021484375
+aboutMeTimeLine.fromTo('.square-cls', 2, {
+    strokeDashoffset: squarePath,
+    strokeDasharray: squarePath,
+    repeat: -1,
+    yoyo: true
+}, {
+    strokeDashoffset: 0,
+    repeat: -1,
+    yoyo: true
+})
+
+
