@@ -106,7 +106,7 @@ gsapTimeLine.to('.anim-block', {
     }
 })
 gsapTimeLine.to('.banner figure', {
-    duration: 1,
+    duration: 0.5,
     opacity: 1,
 })
 
@@ -114,7 +114,6 @@ gsapTimeLine.to('.banner figure', {
 let defaultScrollTrigger = {
     start: `top 30%`,
     end: "bottom 80%",
-    // once: true,
     markers: true
 }
 
@@ -153,7 +152,7 @@ skillTimeLine.fromTo('#skills .skill-wrap li', 1, {
     scaleY: -1
 }, {
     opacity: 1,
-    stagger: 0.5,
+    stagger: 0.3,
     rotateX: 180,
     scaleY: -1,
 });
@@ -188,16 +187,56 @@ let aboutMeTimeLine = gsap.timeline({
 titleTimeline(aboutMeTimeLine, '#about h2')
 titleTimeline(aboutMeTimeLine, '#about p')
 
-// 2081.197021484375
 aboutMeTimeLine.fromTo('.square-cls', 2, {
     strokeDashoffset: squarePath,
     strokeDasharray: squarePath,
-    repeat: -1,
-    yoyo: true
 }, {
     strokeDashoffset: 0,
-    repeat: -1,
-    yoyo: true
 })
 
+aboutMeTimeLine.fromTo('.eyebrow', 0.5, {
 
+    y: -3,
+    repeat: -1,
+    yoyo: true,
+    stagger: 0.3
+}, {
+    y: 0,
+    repeat: -1,
+    yoyo: true,
+    stagger: 0.3
+})
+
+aboutMeTimeLine.fromTo('.lips', 1, {
+    x: 2,
+    repeat: -1,
+    yoyo: true,
+}, {
+    x: 0,
+    repeat: -1,
+    yoyo: true,
+})
+
+// Project TimeLine
+let projectTimeLine = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#project',
+        ...defaultScrollTrigger
+    }
+})
+titleTimeline(projectTimeLine, '#project h2.centered-title')
+// document.querySelectorAll('.project').forEach((project, index) => {
+//     projectTimeLine.fromTo(project.querySelectorAll('.project-img'), {
+//         x: index % 2 == 0 ? 50 : -50,
+//         opacity: 0,
+//     }, {
+//         x: 0,
+//         opacity: 1,
+//         scrollTrigger: {
+//             trigger: project,
+//             start: `top 15%`,
+//             end: "bottom 80%",
+//             markers: true
+//         }
+//     })
+// })
