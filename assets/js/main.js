@@ -225,18 +225,27 @@ let projectTimeLine = gsap.timeline({
     }
 })
 titleTimeline(projectTimeLine, '#project h2.centered-title')
-// document.querySelectorAll('.project').forEach((project, index) => {
-//     projectTimeLine.fromTo(project.querySelectorAll('.project-img'), {
-//         x: index % 2 == 0 ? 50 : -50,
-//         opacity: 0,
-//     }, {
-//         x: 0,
-//         opacity: 1,
-//         scrollTrigger: {
-//             trigger: project,
-//             start: `top 15%`,
-//             end: "bottom 80%",
-//             markers: true
-//         }
-//     })
-// })
+
+
+document.querySelectorAll('.project').forEach((project, index) => {
+    let projectTilesTimeLine = gsap.timeline({
+        scrollTrigger: {
+            trigger: project,
+            ...defaultScrollTrigger
+        }
+    })
+    projectTilesTimeLine.fromTo(project.querySelector('.project-img'), 1, {
+        x: index % 2 === 0 ? 100 : -100,
+        opacity: 0
+    }, {
+        x: 0,
+        opacity: 1
+    })
+    projectTilesTimeLine.fromTo(project.querySelectorAll('.project-content *'), 0.8, {
+        opacity: 0,
+        stagger: 0.3
+    }, {
+        opacity: 1,
+        stagger: 0.3
+    })
+})

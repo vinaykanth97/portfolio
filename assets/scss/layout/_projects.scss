@@ -3,7 +3,7 @@
     gap: em(60);
     align-items: center;
     margin: 0 0 em(60) 0;
-
+    overflow: hidden;
     &:last-of-type {
         margin: 0;
     }

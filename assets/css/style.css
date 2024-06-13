@@ -395,6 +395,7 @@ header .header-wrap .primary-btn:hover {
   gap: 3.75em;
   align-items: center;
   margin: 0 0 3.75em 0;
+  overflow: hidden;
 }
 .project:last-of-type {
   margin: 0;
