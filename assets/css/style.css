@@ -260,8 +260,10 @@ header .header-wrap .primary-btn:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 45%;
+  text-align: center;
   height: calc(100vh - 166px);
+  z-index: 22;
+  position: relative;
 }
 .banner .banner-wrap .content h1 {
   margin: 0 0 20px 0;
@@ -304,11 +306,14 @@ header .header-wrap .primary-btn:hover {
 .banner .banner-wrap figure {
   max-width: 55%;
   width: 100%;
-  position: relative;
-  opacity: 0;
-}
-.banner .banner-wrap figure img {
-  height: calc(100vh - 80px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 30%;
+  width: 100%;
+  opacity: 0.3;
+  transform-origin: center;
 }
 
 .skill-wrap {
@@ -431,20 +436,36 @@ header .header-wrap .primary-btn:hover {
   margin: 0 0 1.875em;
 }
 
-.review .swiper-slide {
-  margin: 0.625em 0;
+.review {
+  display: flex;
+  gap: 1.875em;
+  margin-left: calc((100vw - 76.125em) / 2);
+  scrollbar-width: none;
+}
+.review-wrap {
+  overflow: hidden;
+}
+.review .review-slide {
   text-align: center;
   padding: 2.5em 1.25em;
   box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 0.322);
   border-radius: 20px;
   transition: 0.3s all ease-in-out;
+  min-width: 33.3333333333%;
+  margin: 20px 0 20px 0;
 }
-.review .swiper-slide figure {
+.review .review-slide:first-of-type {
+  margin-left: 20px;
+}
+.review .review-slide:last-of-type {
+  margin-right: 20px;
+}
+.review .review-slide figure {
   margin: 0 0 1em;
   position: relative;
   display: inline-block;
 }
-.review .swiper-slide figure::after {
+.review .review-slide figure::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -456,13 +477,13 @@ header .header-wrap .primary-btn:hover {
   background-size: 50%;
   border-radius: 50%;
 }
-.review .swiper-slide p {
+.review .review-slide p {
   padding: 0 0 1.25em;
   position: relative;
   margin: 0 0 1.25em;
   color: black;
 }
-.review .swiper-slide p:after {
+.review .review-slide p:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -472,29 +493,29 @@ header .header-wrap .primary-btn:hover {
   transform: translateX(-50%);
   background: black;
 }
-.review .swiper-slide h5 {
+.review .review-slide h5 {
   margin: 0 0 1.25em;
   font-weight: 500;
 }
-.review .swiper-slide h6 {
+.review .review-slide h6 {
   color: #71717A;
   font-weight: 500;
 }
-.review .swiper-slide-active {
+.review .review-slide-active {
   background-color: black;
   color: #fff;
 }
-.review .swiper-slide-active p {
+.review .review-slide-active p {
   color: #fff;
 }
-.review .swiper-slide-active figure::after {
+.review .review-slide-active figure::after {
   background-color: #fff;
   background-image: url("../images/quote-black.svg");
 }
-.review .swiper-slide-active p::after {
+.review .review-slide-active p::after {
   background-color: #fff;
 }
-.review .swiper-slide-active h6 {
+.review .review-slide-active h6 {
   color: #fff;
 }
 

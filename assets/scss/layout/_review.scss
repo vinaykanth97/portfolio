@@ -1,11 +1,29 @@
 .review {
-    .swiper-slide {
-        margin: em(10) 0;
+    &-wrap{
+        overflow: hidden;
+    }
+    display: flex;
+    // overflow: hidden;
+    gap: em(30);
+    margin-left: calc((100vw - em(1218)) / 2);
+    scrollbar-width: none;
+
+    .review-slide {
         text-align: center;
         padding: em(40) em(20);
         box-shadow: 2px 2px 12px 1px rgba(0, 0, 0, 0.322);
         border-radius: 20px;
         transition: 0.3s all ease-in-out;
+        min-width: calc(100% / 3);
+        margin: 20px 0 20px 0;
+
+        &:first-of-type {
+            margin-left: 20px;
+        }
+
+        &:last-of-type {
+            margin-right: 20px;
+        }
 
         figure {
             margin: 0 0 em(16);

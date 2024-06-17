@@ -1,13 +1,13 @@
 gsap.registerPlugin(ScrollToPlugin)
 gsap.registerPlugin(ScrollTrigger)
-let reviewSwiper = new Swiper(".swiper-container", {
-    spaceBetween: 30,
-    slidesPerView: 3,
-    centeredSlides: true,
-    loop: true,
-    autoplay: true,
-    roundLengths: true,
-});
+// let reviewSwiper = new Swiper(".swiper-container", {
+//     spaceBetween: 30,
+//     slidesPerView: 3,
+//     centeredSlides: true,
+//     loop: true,
+//     autoplay: true,
+//     roundLengths: true,
+// });
 
 
 // Header on scroll
@@ -84,11 +84,16 @@ let bannerHeading = document.querySelector('.main-content .role');
 let typewriter = new Typewriter(bannerHeading, {
     loop: true
 });
-
+let defaultScrollTrigger = {
+    start: `top 30%`,
+    end: "bottom 80%",
+    markers: true
+}
 
 
 let gsapTimeLine = gsap.timeline({})
 
+// 
 
 // Banner Timeline
 gsapTimeLine.to('.anim-block', {
@@ -107,15 +112,11 @@ gsapTimeLine.to('.anim-block', {
 })
 gsapTimeLine.to('.banner figure', {
     duration: 0.5,
-    opacity: 1,
+    // opacity: 1,
 })
 
 
-let defaultScrollTrigger = {
-    start: `top 30%`,
-    end: "bottom 80%",
-    markers: true
-}
+
 
 let entryTitleAnimation = {
     start: {
@@ -167,7 +168,8 @@ let experienceTimeLine = gsap.timeline({
 titleTimeline(experienceTimeLine, '#experience h2')
 experienceTimeLine.fromTo('#experience .experience', 1, {
     opacity: 0,
-    x: "-20%",
+    x: -200,
+    stagger: 0.5,
 }, {
     opacity: 1,
     x: 0,
@@ -183,6 +185,11 @@ let aboutMeTimeLine = gsap.timeline({
         trigger: '#about',
         ...defaultScrollTrigger
     }
+})
+aboutMeTimeLine.fromTo('.about-wrap svg', 1, {
+    opacity: 0
+}, {
+    opacity: 1
 })
 titleTimeline(aboutMeTimeLine, '#about h2')
 titleTimeline(aboutMeTimeLine, '#about p')
@@ -247,5 +254,69 @@ document.querySelectorAll('.project').forEach((project, index) => {
     }, {
         opacity: 1,
         stagger: 0.3
+    })
+})
+
+
+let testimonialTimeLine = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#testimonial',
+        ...defaultScrollTrigger,
+    }
+})
+titleTimeline(testimonialTimeLine, '#testimonial h2.centered-title')
+testimonialTimeLine.fromTo('.review .review-slide', {
+    opacity: 0,
+    stagger: 0.1
+}, {
+    opacity: 1,
+    stagger: 0.1
+})
+let reviewWrap = document.querySelector('.review')
+let reviewTimeLine = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.review',
+        pin: true,
+        start: "top 30%",
+        scrub: 1,
+        end: () => "+=" + (reviewWrap.scrollWidth - innerWidth),
+    }
+})
+
+reviewTimeLine.to('.review', {
+    x: () => -1 * (reviewWrap.scrollWidth - innerWidth + 100),
+})
+let getInTouchTimeLine = gsap.timeline({
+
+    scrollTrigger: {
+        trigger: '.getin-touch',
+        start: `top 50%`,
+        end: "bottom 80%",
+        markers: true
+    }
+})
+getInTouchTimeLine.fromTo(document.querySelectorAll('.getin-touch *,footer'), {
+    y: 20,
+    stagger: 0.1,
+    opacity: 0
+}, {
+    y: 0,
+    stagger: 0.1,
+    opacity: 1
+})
+
+// Banner wobble
+let bannerFigure = document.querySelector('.banner figure')
+gsap.to(bannerFigure, {
+    rotate: 360,
+    repeat: -1,
+    duration: 6,
+    ease: "none",
+})
+document.querySelector('.banner').addEventListener('mousemove', function (e) {
+    console.log(bannerFigure.getBoundingClientRect())
+    gsap.to(bannerFigure, {
+        x: -(e.clientX - bannerFigure.getBoundingClientRect().width) / 3,
+        y: (e.clientY - bannerFigure.getBoundingClientRect().height) / 3
     })
 })
