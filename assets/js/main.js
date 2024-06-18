@@ -1,14 +1,22 @@
 gsap.registerPlugin(ScrollToPlugin)
 gsap.registerPlugin(ScrollTrigger)
-// let reviewSwiper = new Swiper(".swiper-container", {
-//     spaceBetween: 30,
-//     slidesPerView: 3,
-//     centeredSlides: true,
-//     loop: true,
-//     autoplay: true,
-//     roundLengths: true,
-// });
+// Preloader
+let preloaderTimeLine = gsap.timeline({})
+preloaderTimeLine.to('.preloader .line', 1.5, {
+    width: '100%',
+})
+preloaderTimeLine.to('.preloader .block-top', 0.5, {
+    y: "-100%"
+})
+preloaderTimeLine.to('.preloader .line', {
+    opacity: 0,
+    delay: -0.5,
+})
+preloaderTimeLine.to('.preloader .block-bottom', 0.5, {
+    y: "100%",
+    delay: -0.5,
 
+})
 
 // Header on scroll
 let headerMenu = document.querySelectorAll('header li')
@@ -87,16 +95,15 @@ let typewriter = new Typewriter(bannerHeading, {
 let defaultScrollTrigger = {
     start: `top 30%`,
     end: "bottom 80%",
-    markers: true
+    // markers: true
 }
 
 
-let gsapTimeLine = gsap.timeline({})
 
-// 
+
 
 // Banner Timeline
-gsapTimeLine.to('.anim-block', {
+preloaderTimeLine.to('.anim-block', {
     y: -300,
     stagger: 1.3,
     duration: 2,
@@ -110,9 +117,10 @@ gsapTimeLine.to('.anim-block', {
             .start();
     }
 })
-gsapTimeLine.to('.banner figure', {
-    duration: 0.5,
-    // opacity: 1,
+preloaderTimeLine.fromTo('.banner figure', 1, {
+    opacity: 0,
+}, {
+    opacity: 0.2,
 })
 
 
@@ -292,7 +300,7 @@ let getInTouchTimeLine = gsap.timeline({
         trigger: '.getin-touch',
         start: `top 50%`,
         end: "bottom 80%",
-        markers: true
+        // markers: true
     }
 })
 getInTouchTimeLine.fromTo(document.querySelectorAll('.getin-touch *,footer'), {
@@ -308,15 +316,16 @@ getInTouchTimeLine.fromTo(document.querySelectorAll('.getin-touch *,footer'), {
 // Banner wobble
 let bannerFigure = document.querySelector('.banner figure')
 gsap.to(bannerFigure, {
-    rotate: 360,
+    rotation: 360,
     repeat: -1,
-    duration: 6,
+    duration: 10,
     ease: "none",
 })
 document.querySelector('.banner').addEventListener('mousemove', function (e) {
-    console.log(bannerFigure.getBoundingClientRect())
     gsap.to(bannerFigure, {
         x: -(e.clientX - bannerFigure.getBoundingClientRect().width) / 3,
         y: (e.clientY - bannerFigure.getBoundingClientRect().height) / 3
     })
 })
+
+

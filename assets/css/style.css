@@ -210,11 +210,37 @@ a {
   color: black;
 }
 
+.preloader {
+  position: relative;
+}
+.preloader .line {
+  position: fixed;
+  top: 50%;
+  width: 0%;
+  transform: translateY(-50%);
+  height: 0.375em;
+  background: #fff;
+  z-index: 44;
+}
+.preloader .block {
+  position: fixed;
+  height: 50%;
+  width: 100%;
+  background: black;
+  z-index: 44;
+}
+.preloader .block-top {
+  top: 0;
+}
+.preloader .block-bottom {
+  bottom: 0;
+}
+
 header {
   padding: 1.25em 0;
   position: sticky;
   top: 0;
-  z-index: 22;
+  z-index: 33;
   background-color: #fff;
 }
 header.active {
@@ -313,7 +339,8 @@ header .header-wrap .primary-btn:hover {
   max-width: 30%;
   width: 100%;
   opacity: 0.3;
-  transform-origin: center;
+  transform-origin: center center;
+  z-index: -1;
 }
 
 .skill-wrap {

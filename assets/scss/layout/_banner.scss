@@ -71,7 +71,8 @@
             max-width: 30%;
             width: 100%;
             opacity: 0.3;
-            transform-origin: center;
+            transform-origin: center center;
+            z-index: -1;
         }
     }
 }

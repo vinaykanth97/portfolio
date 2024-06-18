@@ -108,6 +108,39 @@ a {
     text-decoration: none;
     color: $basePrimary;
 }
+
 // .spc{
 //     scroll-padding-top: 3.125em;
 // }
+
+.preloader {
+    position: relative;
+
+    .line {
+        position: fixed;
+        top: 50%;
+        width: 0%;
+        transform: translateY(-50%);
+        height: em(6);
+        background: #fff;
+        z-index: 44;
+    }
+
+    .block {
+        position: fixed;
+        height: 50%;
+        width: 100%;
+        background: $basePrimary;
+        z-index: 44;
+
+
+
+        &-top {
+            top: 0;
+        }
+
+        &-bottom {
+            bottom: 0;
+        }
+    }
+}
