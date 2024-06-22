@@ -345,7 +345,7 @@ header .header-wrap .primary-btn:hover {
 
 .skill-wrap {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(calc(20% - 2.5em), 1fr));
   gap: 2.5em;
 }
 .skill-wrap li {

@@ -93,9 +93,9 @@ let typewriter = new Typewriter(bannerHeading, {
     loop: true
 });
 let defaultScrollTrigger = {
-    start: `top 30%`,
+    start: `top 50%`,
     end: "bottom 80%",
-    // markers: true
+    markers: true
 }
 
 
@@ -286,21 +286,20 @@ let reviewTimeLine = gsap.timeline({
         trigger: '.review',
         pin: true,
         start: "top 30%",
-        scrub: 1,
+        scrub: 2,
         end: () => "+=" + (reviewWrap.scrollWidth - innerWidth),
+        markers: true
     }
 })
 
 reviewTimeLine.to('.review', {
-    x: () => -1 * (reviewWrap.scrollWidth - innerWidth + 100),
+    x: () => -1 * (reviewWrap.scrollWidth - document.querySelector('.container').offsetWidth),
 })
 let getInTouchTimeLine = gsap.timeline({
 
     scrollTrigger: {
-        trigger: '.getin-touch',
-        start: `top 50%`,
-        end: "bottom 80%",
-        // markers: true
+        trigger: '.review',
+        ...defaultScrollTrigger
     }
 })
 getInTouchTimeLine.fromTo(document.querySelectorAll('.getin-touch *,footer'), {
