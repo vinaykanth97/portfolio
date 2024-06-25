@@ -104,9 +104,9 @@ let defaultScrollTrigger = {
 
 // Banner Timeline
 preloaderTimeLine.to('.anim-block', {
-    y: -300,
+    y: "-100%",
     stagger: 1.3,
-    duration: 2,
+    duration: 1,
     onComplete: () => {
         typewriter
             .typeString('<span class="outlined">Frontend</span>')
@@ -285,7 +285,7 @@ let reviewTimeLine = gsap.timeline({
     scrollTrigger: {
         trigger: '.review',
         pin: true,
-        start: "top 30%",
+        start: 'top 10%',
         scrub: 2,
         end: () => "+=" + (reviewWrap.scrollWidth - innerWidth),
         markers: true
@@ -299,7 +299,8 @@ let getInTouchTimeLine = gsap.timeline({
 
     scrollTrigger: {
         trigger: '.review',
-        ...defaultScrollTrigger
+        start: 'top 90%',
+        end: 'bottom bottom'
     }
 })
 getInTouchTimeLine.fromTo(document.querySelectorAll('.getin-touch *,footer'), {
@@ -319,11 +320,14 @@ gsap.to(bannerFigure, {
     repeat: -1,
     duration: 10,
     ease: "none",
+
 })
 document.querySelector('.banner').addEventListener('mousemove', function (e) {
-    gsap.to(bannerFigure, {
-        x: -(e.clientX - bannerFigure.getBoundingClientRect().width) / 3,
-        y: (e.clientY - bannerFigure.getBoundingClientRect().height) / 3
+    let lMouseX = Math.max(-100, Math.min(100, document.querySelector('.banner-wrap').offsetWidth / 3 - e.clientX));
+    let lMouseY = Math.max(-100, Math.min(100, document.querySelector('.banner-wrap').offsetHeight / 3 - e.clientY));
+    gsap.to('.banner figure', {
+        y: lMouseY,
+        x: lMouseX
     })
 })
 

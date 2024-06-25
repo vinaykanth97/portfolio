@@ -3,17 +3,21 @@
     gap: em(30);
 
     figure {
-       flex-basis: 40%;
-        img {
+        flex-basis: 40%;
+
+        svg {
             width: 100%;
+            height: 100%;
         }
     }
 
     .content {
         flex-basis: 60%;
-        h2{
+
+        h2 {
             margin: 0 0 em(14);
         }
+
         p {
             margin: 0 0 em(20);
         }

@@ -24,6 +24,9 @@
             margin: 0 0 em(30);
             flex-grow: 2;
             align-self: center;
+            max-width: em(64);
+            width: 100%;
+            min-height: em(50);
         }
 
         p {

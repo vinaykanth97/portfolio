@@ -1,7 +1,8 @@
 .review {
-    &-wrap{
+    &-wrap {
         overflow: hidden;
     }
+
     display: flex;
     // overflow: hidden;
     gap: em(30);
@@ -29,7 +30,11 @@
             margin: 0 0 em(16);
             position: relative;
             display: inline-block;
-
+            img {
+                max-width: em(96);
+                height: em(96);
+                width: 100%;
+            }
             &::after {
                 content: "";
                 position: absolute;
@@ -81,6 +86,8 @@
             }
 
             figure {
+               
+
                 &::after {
                     background-color: #fff;
                     background-image: url('../images/quote-black.svg');

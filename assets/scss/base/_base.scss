@@ -1,16 +1,32 @@
+html{
+    font-size: 1.2vw;
+    line-height: 2vw;
+}
 body {
     font-family: "Sora", sans-serif;
     font-optical-sizing: auto;
-    font-size: 1em;
+    font-size: 1rem;
     line-height: em(20);
     font-weight: 300;
     font-style: normal;
+
+    // @media(min-width:1200px) {
+    //     font-size: 100%;
+    // }
+
+    // @media(min-width:1400px) {
+    //     font-size: 170%;
+    // }
+
+    // @media(min-width:2200px) {
+    //     font-size: 270%;
+    // }
 }
 
 span {
     &.outlined {
         color: white;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        text-shadow: -0.0625rem -0.0625rem 0 #000, 0.0625rem -0.0625rem 0 #000, -0.0625rem 0.0625rem 0 #000, 0.0625rem 0.0625rem 0 #000;
     }
 }
 
@@ -47,7 +63,7 @@ h6 {
 }
 
 p {
-    font-size: 1em;
+    font-size: 1rem;
     line-height: em(24);
     color: #71717A;
 }
@@ -99,9 +115,7 @@ img {
     display: flex;
 }
 
-.swiper-container {
-    overflow: hidden;
-}
+
 
 a {
     text-decoration: none;

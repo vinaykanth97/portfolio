@@ -40,7 +40,10 @@ header {
             align-items: center;
             gap: em(10);
             cursor: pointer;
-
+            img{
+                width: em(20);
+                height: em(20);
+            }
             &:hover {
                 background: rgba($color: #0e0d0d, $alpha: 1.0);
             }
