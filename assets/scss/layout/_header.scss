@@ -92,11 +92,13 @@ header {
             }
         }
     }
-
+    .hamburger{
+        display: none;
+    }
     @include mobile {
         .hamburger {
             transition: all 0.3s ease-in-out;
-
+            display: block;
             .line {
                 width: 30px;
                 height: 3px;

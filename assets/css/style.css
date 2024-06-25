@@ -324,9 +324,13 @@ header .header-wrap .primary-btn img {
 header .header-wrap .primary-btn:hover {
   background: #0e0d0d;
 }
+header .hamburger {
+  display: none;
+}
 @media (max-width: 767px) {
   header .hamburger {
     transition: all 0.3s ease-in-out;
+    display: block;
   }
   header .hamburger .line {
     width: 30px;
@@ -369,13 +373,13 @@ header .header-wrap .primary-btn:hover {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  height: calc(100vh - 166px);
+  height: calc(100vh - 10.375rem);
   z-index: 22;
   position: relative;
 }
 @media (max-width: 767px) {
   .banner .banner-wrap .content {
-    height: calc(100vh - 70px);
+    height: auto;
   }
 }
 .banner .banner-wrap .content h1 {
@@ -436,17 +440,17 @@ header .header-wrap .primary-btn:hover {
   }
 }
 
-.skill-wrap {
+#skills .skill-wrap {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(calc(20% - 2.5rem), 1fr));
   gap: 2.5rem;
 }
 @media (max-width: 767px) {
-  .skill-wrap {
+  #skills .skill-wrap {
     grid-template-columns: repeat(auto-fill, minmax(calc(50% - 2.5rem), 1fr));
   }
 }
-.skill-wrap li {
+#skills .skill-wrap li {
   padding: 1.25rem 1.25rem;
   text-align: center;
   border: 1px solid black;
@@ -454,14 +458,14 @@ header .header-wrap .primary-btn:hover {
   flex-direction: column;
   max-height: 11.625rem;
 }
-.skill-wrap li:hover {
+#skills .skill-wrap li:hover {
   background-color: black;
   color: #fff;
 }
-.skill-wrap li:hover path {
+#skills .skill-wrap li:hover path {
   fill: #fff;
 }
-.skill-wrap li svg {
+#skills .skill-wrap li svg {
   margin: 0 0 1.875rem;
   flex-grow: 2;
   align-self: center;
@@ -469,7 +473,7 @@ header .header-wrap .primary-btn:hover {
   width: 100%;
   min-height: 3.125rem;
 }
-.skill-wrap li p {
+#skills .skill-wrap li p {
   font-weight: bold;
 }
 

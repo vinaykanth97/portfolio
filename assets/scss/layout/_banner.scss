@@ -1,4 +1,5 @@
 .banner {
+   
     .banner-wrap {
         display: flex;
         .content {
@@ -6,11 +7,11 @@
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            height: calc(100vh - 166px);
+            height: calc(100vh - em(166));
             z-index: 22;
             position: relative;
             @include mobile{
-                height: calc(100vh - 70px);
+                height: auto;
             }
             h1 {
                 margin: 0 0 20px 0;

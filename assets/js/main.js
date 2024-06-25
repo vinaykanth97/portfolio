@@ -94,12 +94,22 @@ let bannerHeading = document.querySelector('.main-content .role');
 let typewriter = new Typewriter(bannerHeading, {
     loop: true
 });
-let defaultScrollTrigger = {
-    start: `top 50%`,
-    end: "bottom 80%",
-    // markers: true
-}
+let defaultScrollTrigger
+gsap.matchMedia().add("(min-width: 768px)", () => {
+    defaultScrollTrigger = {
+        start: `top 50%`,
+        end: "bottom 80%",
+        // markers: true
+    }
+})
 
+gsap.matchMedia().add("(min-width: 300px)", () => {
+    defaultScrollTrigger = {
+        start: `-20% top`,
+        end: "bottom 80%",
+        markers: true
+    }
+})
 
 
 
