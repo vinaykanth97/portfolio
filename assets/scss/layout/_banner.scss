@@ -10,7 +10,7 @@
             z-index: 22;
             position: relative;
             @include mobile{
-                height: auto;
+                height: calc(100vh - 70px);
             }
             h1 {
                 margin: 0 0 20px 0;

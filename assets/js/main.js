@@ -22,6 +22,8 @@ preloaderTimeLine.to('.preloader .block-bottom', 0.5, {
 let headerMenu = document.querySelectorAll('header li')
 const HeaderScroll = (e) => {
     e.target.classList.add('active')
+    document.querySelector('.menu-ess').classList.remove('active')
+    document.querySelector('.hamburger').classList.remove('is-active')
     headerMenu.forEach(menu => {
         if (e.target !== menu) {
             menu.classList.remove('active')

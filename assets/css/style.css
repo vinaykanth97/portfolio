@@ -375,7 +375,7 @@ header .header-wrap .primary-btn:hover {
 }
 @media (max-width: 767px) {
   .banner .banner-wrap .content {
-    height: auto;
+    height: calc(100vh - 70px);
   }
 }
 .banner .banner-wrap .content h1 {
