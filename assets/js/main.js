@@ -105,7 +105,7 @@ gsap.matchMedia().add("(min-width: 768px)", () => {
 
 gsap.matchMedia().add("(min-width: 300px)", () => {
     defaultScrollTrigger = {
-        start: `-60% top`,
+        start: `-20% top`,
         end: "bottom 80%",
         // markers: true
     }
