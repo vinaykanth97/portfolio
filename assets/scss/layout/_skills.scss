@@ -3,6 +3,10 @@
     grid-template-columns: repeat(auto-fill, minmax(calc(100%/5 - em(40)), 1fr));
     gap: em(40);
 
+    @include mobile {
+        grid-template-columns: repeat(auto-fill, minmax(calc(100%/2 - em(40)), 1fr));
+    }
+
     li {
         padding: em(20) em(20);
         text-align: center;

@@ -4,12 +4,19 @@
     align-items: center;
     margin: 0 0 em(60) 0;
     overflow: hidden;
+    @include mobile{
+        flex-direction: column;
+    }
     &:last-of-type {
         margin: 0;
     }
 
     &:nth-child(even) {
         flex-direction: row-reverse;
+
+        @include mobile {
+            flex-direction: column;
+        }
     }
 
     &-img {
@@ -27,6 +34,7 @@
         svg {
             max-width: em(24);
             width: 100%;
+
             g {
                 transition: 0.3s all ease-in-out;
             }

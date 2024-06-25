@@ -1,7 +1,12 @@
-html{
+html {
     font-size: 1.2vw;
     line-height: 2vw;
+    @media(max-width:767px) {
+        font-size: 14px;
+        line-height: 1.2;
+    }
 }
+
 body {
     font-family: "Sora", sans-serif;
     font-optical-sizing: auto;
@@ -9,6 +14,8 @@ body {
     line-height: em(20);
     font-weight: 300;
     font-style: normal;
+
+   
 
     // @media(min-width:1200px) {
     //     font-size: 100%;

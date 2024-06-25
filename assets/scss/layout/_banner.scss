@@ -9,6 +9,9 @@
             height: calc(100vh - 166px);
             z-index: 22;
             position: relative;
+            @include mobile{
+                height: auto;
+            }
             h1 {
                 margin: 0 0 20px 0;
             }
@@ -73,6 +76,9 @@
             transform-origin: center;
             z-index: -1;
             transform-style: preserve-3d;
+            @include mobile{
+                display: none;
+            }
         }
     }
 }

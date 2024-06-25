@@ -15,8 +15,14 @@
         align-items: center;
         justify-content: space-between;
         margin: 0 0 em(20);
+        @include mobile{
+            flex-direction: column;
+            gap: 16px;
+           align-items: flex-start;
+        }
         img{
             max-width: em(28);
+            height: em(28);
             width: 100%;
             background: #fff;
         }

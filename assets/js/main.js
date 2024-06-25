@@ -95,7 +95,7 @@ let typewriter = new Typewriter(bannerHeading, {
 let defaultScrollTrigger = {
     start: `top 50%`,
     end: "bottom 80%",
-    markers: true
+    // markers: true
 }
 
 
@@ -180,7 +180,7 @@ experienceTimeLine.fromTo('#experience .experience', 1, {
     stagger: 0.5,
 }, {
     opacity: 1,
-    x: 0,
+    x: -1,
     stagger: 0.5,
 })
 
@@ -281,20 +281,23 @@ testimonialTimeLine.fromTo('.review .review-slide', {
     stagger: 0.1
 })
 let reviewWrap = document.querySelector('.review')
-let reviewTimeLine = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.review',
-        pin: true,
-        start: 'top 10%',
-        scrub: 2,
-        end: () => "+=" + (reviewWrap.scrollWidth - innerWidth),
-        markers: true
-    }
+gsap.matchMedia().add("(min-width: 768px)", () => {
+    let reviewTimeLine = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.review',
+            pin: true,
+            start: 'top 10%',
+            scrub: 2,
+            end: () => "+=" + (reviewWrap.scrollWidth - innerWidth),
+            // markers: true
+        }
+    })
+
+    reviewTimeLine.to('.review', {
+        x: () => -1 * (reviewWrap.scrollWidth - document.querySelector('.container').offsetWidth),
+    })
 })
 
-reviewTimeLine.to('.review', {
-    x: () => -1 * (reviewWrap.scrollWidth - document.querySelector('.container').offsetWidth),
-})
 let getInTouchTimeLine = gsap.timeline({
 
     scrollTrigger: {
@@ -332,3 +335,7 @@ document.querySelector('.banner').addEventListener('mousemove', function (e) {
 })
 
 
+document.querySelector('.hamburger').addEventListener('click', function () {
+    this.classList.toggle('is-active')
+    document.querySelector('.menu-ess').classList.toggle('active')
+})

@@ -107,6 +107,12 @@ html {
   font-size: 1.2vw;
   line-height: 2vw;
 }
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}
 
 body {
   font-family: "Sora", sans-serif;
@@ -244,6 +250,41 @@ header {
   z-index: 33;
   background-color: #fff;
 }
+header .menu-ess {
+  justify-content: space-between;
+  flex-basis: 65%;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  header .menu-ess {
+    padding: 100px 0 0 0;
+    position: fixed;
+    height: 100%;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f3eded;
+    top: 0;
+    right: 0;
+    justify-content: normal;
+    -webkit-clip-path: circle(0% at 100% 0%);
+            clip-path: circle(0% at 100% 0%);
+    overflow: hidden;
+    transition: 1s all ease-in-out;
+  }
+  header .menu-ess.active {
+    -webkit-clip-path: circle(100% at 100% 0%);
+            clip-path: circle(100% at 100% 0%);
+  }
+  header .menu-ess.active + .hamburger .line {
+    background: #000;
+  }
+  header .menu-ess nav {
+    margin: 0 0 1.25rem;
+  }
+  header .menu-ess nav ul {
+    flex-direction: column;
+  }
+}
 header.active {
   box-shadow: 10px 6px 8px -8px rgba(0, 0, 0, 0.3);
 }
@@ -283,6 +324,42 @@ header .header-wrap .primary-btn img {
 header .header-wrap .primary-btn:hover {
   background: #0e0d0d;
 }
+@media (max-width: 767px) {
+  header .hamburger {
+    transition: all 0.3s ease-in-out;
+  }
+  header .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    display: block;
+    margin: 6px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  header .hamburger.is-active {
+    animation: smallbig 0.6s forwards;
+  }
+  header .hamburger.is-active .line {
+    transition-delay: 0.2s;
+  }
+  header .hamburger.is-active .line:nth-child(2) {
+    opacity: 0;
+  }
+  header .hamburger.is-active .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  header .hamburger.is-active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  @keyframes smallbig {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0);
+    }
+  }
+}
 
 .banner .banner-wrap {
   display: flex;
@@ -295,6 +372,11 @@ header .header-wrap .primary-btn:hover {
   height: calc(100vh - 166px);
   z-index: 22;
   position: relative;
+}
+@media (max-width: 767px) {
+  .banner .banner-wrap .content {
+    height: auto;
+  }
 }
 .banner .banner-wrap .content h1 {
   margin: 0 0 20px 0;
@@ -348,11 +430,21 @@ header .header-wrap .primary-btn:hover {
   z-index: -1;
   transform-style: preserve-3d;
 }
+@media (max-width: 767px) {
+  .banner .banner-wrap figure {
+    display: none;
+  }
+}
 
 .skill-wrap {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(calc(20% - 2.5rem), 1fr));
   gap: 2.5rem;
+}
+@media (max-width: 767px) {
+  .skill-wrap {
+    grid-template-columns: repeat(auto-fill, minmax(calc(50% - 2.5rem), 1fr));
+  }
 }
 .skill-wrap li {
   padding: 1.25rem 1.25rem;
@@ -400,8 +492,16 @@ header .header-wrap .primary-btn:hover {
   justify-content: space-between;
   margin: 0 0 1.25rem;
 }
+@media (max-width: 767px) {
+  .experience-title {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
 .experience-title img {
   max-width: 1.75rem;
+  height: 1.75rem;
   width: 100%;
   background: #fff;
 }
@@ -414,6 +514,11 @@ header .header-wrap .primary-btn:hover {
 .about-wrap {
   display: flex;
   gap: 1.875rem;
+}
+@media (max-width: 767px) {
+  .about-wrap {
+    flex-direction: column;
+  }
 }
 .about-wrap figure {
   flex-basis: 40%;
@@ -439,11 +544,21 @@ header .header-wrap .primary-btn:hover {
   margin: 0 0 3.75rem 0;
   overflow: hidden;
 }
+@media (max-width: 767px) {
+  .project {
+    flex-direction: column;
+  }
+}
 .project:last-of-type {
   margin: 0;
 }
 .project:nth-child(even) {
   flex-direction: row-reverse;
+}
+@media (max-width: 767px) {
+  .project:nth-child(even) {
+    flex-direction: column;
+  }
 }
 .project-img {
   flex: 1;
@@ -482,6 +597,13 @@ header .header-wrap .primary-btn:hover {
 .review-wrap {
   overflow: hidden;
 }
+@media (max-width: 767px) {
+  .review {
+    margin-left: 0;
+    scrollbar-width: auto;
+    overflow: auto;
+  }
+}
 .review .review-slide {
   text-align: center;
   padding: 2.5rem 1.25rem;
@@ -490,6 +612,11 @@ header .header-wrap .primary-btn:hover {
   transition: 0.3s all ease-in-out;
   min-width: 33.3333333333%;
   margin: 20px 0 20px 0;
+}
+@media (max-width: 767px) {
+  .review .review-slide {
+    min-width: 100%;
+  }
 }
 .review .review-slide:first-of-type {
   margin-left: 20px;
