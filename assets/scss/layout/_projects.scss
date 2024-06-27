@@ -25,6 +25,8 @@
         img {
             width: 100%;
             border-radius: em(18);
+            min-height: em(388);
+            object-fit: cover;
         }
     }
 

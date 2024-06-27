@@ -94,22 +94,12 @@ let bannerHeading = document.querySelector('.main-content .role');
 let typewriter = new Typewriter(bannerHeading, {
     loop: true
 });
-let defaultScrollTrigger
-gsap.matchMedia().add("(min-width: 768px)", () => {
-    defaultScrollTrigger = {
-        start: `top 50%`,
-        end: "bottom 80%",
-        // markers: true
-    }
-})
 
-gsap.matchMedia().add("(min-width: 300px)", () => {
-    defaultScrollTrigger = {
-        start: `-20% top`,
-        end: "bottom 80%",
-        // markers: true
-    }
-})
+
+let defaultScrollTrigger = {
+    start: `-50% 30%`,
+    end: "bottom 80%",
+}
 
 
 
@@ -117,8 +107,8 @@ gsap.matchMedia().add("(min-width: 300px)", () => {
 // Banner Timeline
 preloaderTimeLine.to('.anim-block', {
     y: "-100%",
-    stagger: 1.3,
-    duration: 1,
+    stagger: 0.7,
+    duration: 0.5,
     onComplete: () => {
         typewriter
             .typeString('<span class="outlined">Frontend</span>')
@@ -268,7 +258,7 @@ document.querySelectorAll('.project').forEach((project, index) => {
         x: 0,
         opacity: 1
     })
-    projectTilesTimeLine.fromTo(project.querySelectorAll('.project-content *'), 0.8, {
+    projectTilesTimeLine.fromTo(project.querySelectorAll('.project-content h2,.project-content h3,.project-content p,.project-content svg'), 0.8, {
         opacity: 0,
         stagger: 0.3
     }, {
@@ -350,4 +340,14 @@ document.querySelector('.banner').addEventListener('mousemove', function (e) {
 document.querySelector('.hamburger').addEventListener('click', function () {
     this.classList.toggle('is-active')
     document.querySelector('.menu-ess').classList.toggle('active')
+})
+
+document.querySelector('.header-wrap > figure').addEventListener('click', function () {
+    gsap.to(window, {
+        duration: 1.5,
+        ease: "back.inOut(1.7)",
+        scrollTo: {
+            y: 0,
+        }
+    });
 })

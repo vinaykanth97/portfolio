@@ -295,6 +295,7 @@ header .header-wrap {
 }
 header .header-wrap figure {
   flex-basis: 2.5rem;
+  cursor: pointer;
 }
 header .header-wrap nav ul {
   display: flex;
@@ -570,6 +571,9 @@ header .hamburger {
 .project-img img {
   width: 100%;
   border-radius: 1.125rem;
+  min-height: 24.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .project-content {
   flex: 1;

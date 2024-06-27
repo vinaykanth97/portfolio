@@ -1,7 +1,8 @@
 .banner {
-   
+
     .banner-wrap {
         display: flex;
+
         .content {
             display: flex;
             flex-direction: column;
@@ -10,9 +11,11 @@
             height: calc(100vh - em(166));
             z-index: 22;
             position: relative;
-            @include mobile{
+
+            @include mobile {
                 height: auto;
             }
+
             h1 {
                 margin: 0 0 20px 0;
             }
@@ -70,14 +73,15 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             max-width: 30%;
             width: 100%;
             opacity: 0.3;
             transform-origin: center;
             z-index: -1;
             transform-style: preserve-3d;
-            @include mobile{
+
+            @include mobile {
                 display: none;
             }
         }
