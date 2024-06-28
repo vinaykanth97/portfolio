@@ -97,7 +97,7 @@ let typewriter = new Typewriter(bannerHeading, {
 
 
 let defaultScrollTrigger = {
-    start: `-50% 30%`,
+    start: `-20% 30%`,
     end: "bottom 80%",
 }
 
